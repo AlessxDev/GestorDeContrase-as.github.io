@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Contraseñas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="animated-title">Generador de Contraseñas</h1>
+        
+        <div class="menu">
+            <button onclick="mostrarFormulario('generar')">Generar Contraseña</button>
+            <button onclick="mostrarContraseñas()">Mostrar Contraseñas</button>
+            <button onclick="guardarEnArchivo()">Guardar en Archivo</button>
+            <button onclick="mostrarFormulario('eliminar')">Eliminar Contraseña</button>
+            <button onclick="eliminarTodo()">Eliminar Todo</button>
+        </div>
+
+        <div id="formulario-generar" class="formulario">
+            <h2>Generar Nueva Contraseña</h2>
+            <input type="text" id="nombre" placeholder="Nombre para la contraseña">
+            <input type="number" id="longitud" placeholder="Longitud (mínimo 6)" min="6">
+            
+            <div class="opciones-caracteres">
+                <label><input type="checkbox" id="mayusculas" checked> Mayúsculas (A-Z)</label>
+                <label><input type="checkbox" id="minusculas" checked> Minúsculas (a-z)</label>
+                <label><input type="checkbox" id="numeros" checked> Números (0-9)</label>
+                <label><input type="checkbox" id="hexadecimal"> Hexadecimal (0-9, A-F)</label>
+            </div>
+
+            <div class="opciones-especiales">
+                <h3>Caracteres Especiales</h3>
+                <input type="text" id="caracteres-especiales" value="!@#$%^&*">
+            </div>
+
+            <button onclick="generarContraseña()">Generar</button>
+            <p id="contraseña-generada" class="animated-text"></p>
+        </div>
+
+        <div id="formulario-eliminar" class="formulario">
+            <h2>Eliminar Contraseña</h2>
+            <input type="text" id="nombre-eliminar" placeholder="Nombre de la contraseña">
+            <button onclick="eliminarContraseña()">Eliminar</button>
+        </div>
+
+        <div id="contraseñas-guardadas" class="animated-list">
+            <h2>Contraseñas Guardadas</h2>
+            <ul id="lista-contraseñas"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

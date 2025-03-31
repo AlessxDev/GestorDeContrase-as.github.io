@@ -1,0 +1,238 @@
+/* Estilos generales */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #303f54; /* Fondo oscuro */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #ffffff; /* Texto blanco */
+}
+
+.container {
+    background: #1f2937; /* Fondo gris oscuro */
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #ffffff; /* Texto blanco */
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: #ffffff; /* Texto blanco */
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #ffffff; /* Texto blanco */
+}
+
+/* Menú de botones */
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.menu button {
+    padding: 0.75rem;
+    border: none;
+    background: #10b981; /* Verde */
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.menu button:hover {
+    background: #059669; /* Verde más oscuro al pasar el mouse */
+}
+
+/* Formularios */
+.formulario {
+    display: none;
+    margin-top: 1.5rem;
+}
+
+.formulario input {
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border: 1px solid #374151; /* Borde gris medio */
+    border-radius: 8px;
+    width: calc(100% - 1.5rem);
+    font-size: 1rem;
+    background: #374151; /* Fondo gris medio */
+    color: #ffffff; /* Texto blanco */
+}
+
+.formulario input:disabled {
+    background: #4b5563; /* Fondo gris más oscuro para campos deshabilitados */
+    color: #9ca3af; /* Texto gris para campos deshabilitados */
+}
+
+.formulario input:focus {
+    outline: none;
+    border-color: #10b981; /* Borde verde al enfocar */
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1); /* Sombra verde */
+}
+
+/* Mejoras en las casillas de verificación */
+.opciones-caracteres {
+    text-align: left;
+    margin: 1rem 0;
+}
+
+/* Estilos para las casillas de verificación */
+.opciones-caracteres label {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: #d1d5db; /* Texto gris claro */
+    cursor: pointer;
+}
+
+.opciones-caracteres input[type="checkbox"] {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #10b981; /* Borde verde */
+    border-radius: 4px;
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.opciones-caracteres input[type="checkbox"]:checked {
+    background: #10b981; /* Fondo verde cuando está seleccionado */
+    border-color: #10b981;
+}
+
+.opciones-caracteres input[type="checkbox"]:checked::after {
+    content: "✔";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    color: white;
+}
+
+/* Estilos cuando el Hexadecimal está activado */
+.opciones-caracteres.hexadecimal-activo label:not(:has(#hexadecimal)) {
+    opacity: 0.5; /* Hace que los checkboxes se vean más grisosos */
+    pointer-events: none; /* Deshabilita la interacción con los checkboxes */
+    color: #6b7280; /* Texto más grisoso */
+}
+
+.opciones-especiales {
+    text-align: left;
+    margin: 1rem 0;
+}
+
+.opciones-especiales input {
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border: 1px solid #374151; /* Borde gris medio */
+    border-radius: 8px;
+    width: calc(100% - 1.5rem);
+    font-size: 1rem;
+    background: #374151; /* Fondo gris medio */
+    color: #ffffff; /* Texto blanco */
+}
+
+/* Contraseña generada */
+#contraseña-generada {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #10b981; /* Verde */
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Lista de contraseñas */
+#contraseñas-guardadas {
+    margin-top: 1.5rem;
+}
+
+#lista-contraseñas {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+#lista-contraseñas li {
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    background: #374151; /* Fondo gris medio */
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #ffffff; /* Texto blanco */
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.animated-title {
+    animation: fadeIn 2s ease-in-out;
+}
+
+.animated-text {
+    animation: slideIn 1s ease-in-out;
+}
+
+.animated-list {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Estilos específicos para el botón de Generar */
+#formulario-generar button {
+    padding: 0.75rem;
+    border: none;
+    background: #10b981; /* Verde */
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#formulario-generar button:hover {
+    background: #059669; /* Verde más oscuro al pasar el mouse */
+    transform: translateY(-2px); /* Efecto de levantar */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+#formulario-generar button:active {
+    transform: translateY(0); /* Efecto de presionar */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
